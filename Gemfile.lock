@@ -1,6 +1,15 @@
+GIT
+  remote: git://github.com/sporkrb/spork-rails.git
+  revision: 0dd45e59d3237b4c8f9efc215b46d9c07072a95e
+  specs:
+    spork-rails (4.0.0)
+      rails (>= 3.0.0, < 5)
+      spork (>= 1.0rc0)
+
 GEM
   remote: https://rubygems.org/
   specs:
+    ZenTest (4.11.0)
     actionmailer (4.2.0)
       actionpack (= 4.2.0)
       actionview (= 4.2.0)
@@ -37,6 +46,13 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.0)
+    autotest (4.4.6)
+      ZenTest (>= 4.4.1)
+    autotest-notification (2.3.4)
+      autotest-standalone (~> 4.5)
+    autotest-rails (4.2.1)
+      ZenTest (~> 4.5)
+    autotest-standalone (4.5.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -44,6 +60,12 @@ GEM
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
       slop (~> 3.6)
+    capybara (2.4.4)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -79,6 +101,7 @@ GEM
     multi_json (1.10.1)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    power_assert (0.2.2)
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -108,6 +131,10 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    redgreen (1.2.2)
+    rnotify (0.2)
+      activesupport (>= 3.0.0)
+      rspec-rails (>= 2.7.0)
     rspec (3.2.0)
       rspec-core (~> 3.2.0)
       rspec-expectations (~> 3.2.0)
@@ -140,6 +167,7 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     slop (3.6.0)
+    spork (1.0.0rc4)
     spring (1.3.2)
     sprockets (2.12.3)
       hike (~> 1.2)
@@ -151,6 +179,8 @@ GEM
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
     sqlite3 (1.3.10)
+    test-unit (3.0.8)
+      power_assert
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -166,27 +196,33 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (~> 4.0)
       sprockets-rails (>= 2.0, < 4.0)
-    webrat (0.7.1)
-      nokogiri (>= 1.2.0)
-      rack (>= 1.0)
-      rack-test (>= 0.5.3)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  ZenTest
+  autotest
+  autotest-notification
+  autotest-rails
   byebug
+  capybara
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.0)
+  redgreen
+  rnotify
   rspec (= 3.2.0)
   rspec-rails (= 3.2.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  spork-rails!
   spring
   sqlite3
+  test-unit
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
-  webrat (= 0.7.1)

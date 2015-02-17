@@ -22,10 +22,11 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
+gem 'spork-rails', :github => 'sporkrb/spork-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'redgreen'
+gem 'autotest-notification'
 # Use Unicorn as the app server
 # gem 'unicorn'
 group :development do
@@ -34,7 +35,13 @@ end
 
 group :test do
   gem 'rspec', '3.2.0'
-  gem 'webrat', '0.7.1'
+  gem 'capybara'
+  gem 'ZenTest'
+  gem 'test-unit'
+  gem 'redgreen'
+  gem 'autotest-rails'
+  gem 'autotest'
+  gem 'rnotify'
 end
 
 # Use Capistrano for deployment
