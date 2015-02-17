@@ -24,25 +24,47 @@ RSpec.describe PagesController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
-end
 
-feature "HomePage" do
-  before { visit '/pages/home'}
-  scenario do
-    expect(page.html).to have_title("Twitter App | Home")
+    describe "GET #helpe" do
+    it "returns http success" do
+      get :help
+      expect(response).to have_http_status(:success)
+    end
   end
 end
 
-feature "ContactPage" do
-  before { visit '/pages/contact'}
-  scenario do
-    expect(page.html).to have_title("Twitter App | Contact")
-  end
-end
+feature "Pages" do
 
-feature "AboutPage" do
-  before { visit '/pages/about'}
-  scenario do
-    expect(page.html).to have_title("Twitter App | About")
+  before(:each) do
+    @base_title = "Twitter App | "
+  end
+
+  feature "HomePage" do
+    before { visit '/pages/home'}
+    scenario do
+      expect(page.html).to have_title(@base_title + "Home")
+    end
+  end
+
+  feature "ContactPage" do
+    before { visit '/pages/contact'}
+    scenario do
+      expect(page.html).to have_title(@base_title + "Contact")
+    end
+  end
+
+  feature "AboutPage" do
+    before { visit '/pages/about'}
+    scenario do
+      expect(page.html).to have_title(@base_title + "About")
+    end
+  end
+
+
+  feature "HelpPage" do
+    before { visit '/pages/help'}
+    scenario do
+      expect(page.html).to have_title(@base_title + "Help")
+    end
   end
 end
